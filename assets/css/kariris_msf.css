@@ -1,0 +1,203 @@
+.kariris_multistep_form {
+	padding: 1em;
+}
+
+.kariris_multistep_step {
+	padding: 1em;
+	margin-bottom: 1em;
+	display: none;
+}
+
+
+.kariris_multistep_step.active {
+	display: block;
+}
+.kariris_multistep_form .kmsf_navigation {
+    position: relative;
+    margin-top: -2em;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.kariris_multistep_form .kmsf_navigation a.kmsf_prev,
+.kariris_multistep_form .kmsf_navigation a.kmsf_next {
+    background: var(--ast-global-color-0);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 1em;
+    display: inline-block;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.kariris_multistep_form .kmsf_navigation .kmsf_prev,
+.kariris_multistep_form .kmsf_navigation .kmsf_next {
+	display: none;
+}
+.kariris_multistep_form .kmsf_navigation .kmsf_next {
+	float: right;
+}
+
+
+.kariris_multistep_form .kmsf_navigation a.kmsf_prev:hover,
+.kariris_multistep_form .kmsf_navigation a.kmsf_next:hover {
+    background: var(--ast-global-color-1);
+}
+
+input.wpcf7-form-control.has-spinner.wpcf7-submit {
+    display: inline-block;
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+
+.kariris_multistep_form ul.kmsf_progressbar_itens,
+.kariris_multistep_form ul.kmsf_progressbar_itens li {
+	margin: 0;
+	padding: 0;
+
+}
+.kariris_multistep_form ul.kmsf_progressbar_itens {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.kariris_multistep_form ul.kmsf_progressbar_itens li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.kariris_multistep_form .kmsf_progressbar .bar {
+    width: 100%;
+    height: 20px;
+    background: #e7e7e7;
+    margin-bottom: 40px;
+    border-radius: 50px;
+}
+
+.kariris_multistep_form .kmsf_progressbar .bar .completed {
+    background: green;
+    height: 100%;
+    width: 20px;
+    border-radius: 50px;
+    transition: width .6s;
+    background: linear-gradient(-90deg, rgba(0,212,28,1) 0%, rgba(0,200,174,1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.kariris_multistep_form .kmsf_progressbar .bar .completed:after {
+	content: " ";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    background-image: linear-gradient(
+    	45deg,
+    	rgba(255,255,255,.15) 25%,
+    	transparent 25%,
+    	transparent 50%,
+    	rgba(255,255,255,.15) 50%,
+    	rgba(255,255,255,.15) 75%,
+    	transparent 75%,
+    	transparent
+	);
+    background-size: 1rem 1rem;
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+
+span.kmsf_progress_index {
+    background: #ebebeb;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: calc(2em - 2px);
+    text-align: center;
+    border-radius: 100px;
+    border: 1px solid #cbcbcb;
+    font-weight: bold;
+    color: grey;
+}
+
+span.kmsf_progress_title {
+    display: block;
+    text-align: center;
+    line-height: 1em;
+    font-weight: bold;
+    color: grey;
+    margin: .5em 0;
+}
+
+li.kmsf_progress_item.current span.kmsf_progress_index {
+    color: #FFF;
+    background: #008000;
+    border-color: green;
+}
+li.kmsf_progress_item.current span.kmsf_progress_title {
+    color: green;
+}
+
+li.kmsf_progress_item.completed span.kmsf_progress_index {
+    color: green;
+    background: #0080001c;
+    border-color: green;
+}
+li.kmsf_progress_item.completed span.kmsf_progress_title {
+    color: green;
+}
+
+
+.progress-bar-animated {
+    -webkit-animation: progress-bar-stripes 1s linear infinite;
+    animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+	from { background-position: 0 0; }
+	to { background-position: 1rem 0; }
+}
+
+
+@media screen and (max-width: 803px) {
+	span.kmsf_progress_title {
+		display: none;
+	}
+	span.kmsf_progress_index {
+	    margin-bottom: 1em;
+	}
+}
+
+
+form.wpcf7-form.submitting {
+    position: relative;
+}
+
+form.wpcf7-form.submitting:after {
+    content: "enviando...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffffbf;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: green;
+}
+
+form.wpcf7-form.sent .kariris_multistep_form {
+    display: none;
+}
